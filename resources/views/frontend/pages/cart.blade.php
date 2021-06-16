@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Cart Page')
+@section('title','Carrito')
 @section('main-content')
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">
@@ -8,8 +8,8 @@
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="">Cart</a></li>
+							<li><a href="{{('home')}}">Inicio<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="">Carrito</a></li>
 						</ul>
 					</div>
 				</div>
@@ -27,10 +27,10 @@
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
-								<th>PRODUCT</th>
-								<th>NAME</th>
-								<th class="text-center">UNIT PRICE</th>
-								<th class="text-center">QUANTITY</th>
+								<th>PRODUCTO</th>
+								<th>NOMBRE</th>
+								<th class="text-center">PRECIO UNITARIO</th>
+								<th class="text-center">CATIDAD</th>
 								<th class="text-center">TOTAL</th> 
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
@@ -79,13 +79,13 @@
 										<td></td>
 										<td></td>
 										<td class="float-right">
-											<button class="btn float-right" type="submit">Update</button>
+											<button class="btn float-right" type="submit">Actualizar</button>
 										</td>
 									</track>
 								@else 
 										<tr>
 											<td class="text-center">
-												There are no any carts available. <a href="{{route('product-grids')}}" style="color:blue;">Continue shopping</a>
+												No hay carritos disponibles. <a href="{{route('product-grids')}}" style="color:blue;">Continuar comprando</a>
 
 											</td>
 										</tr>
@@ -108,28 +108,28 @@
 									<form action="{{route('coupon-store')}}" method="POST">
 											@csrf
 											<input name="code" placeholder="Enter Your Coupon">
-											<button class="btn">Apply</button>
+											<button class="btn">Aplicar</button>
 										</form>
 									</div>
 									{{-- <div class="checkbox">`
 										@php 
 											$shipping=DB::table('shippings')->where('status','active')->limit(1)->get();
 										@endphp
-										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox" onchange="showMe('shipping');"> Shipping</label>
+										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox" onchange="showMe('shipping');"> Envío</label>
 									</div> --}}
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-7 col-12">
 								<div class="right">
 									<ul>
-										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
+										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Subtotal<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
 										{{-- <div id="shipping" style="display:none;">
 											<li class="shipping">
 												Shipping {{session('shipping_price')}}
 												@if(count(Helper::shipping())>0 && Helper::cartCount()>0)
 													<div class="form-select">
 														<select name="shipping" class="nice-select">
-															<option value="">Select</option>
+															<option value="">Seleccione</option>
 															@foreach(Helper::shipping() as $shipping)
 															<option value="{{$shipping->id}}" class="shippingOption" data-price="{{$shipping->price}}">{{$shipping->type}}: ${{$shipping->price}}</option>
 															@endforeach
@@ -137,7 +137,7 @@
 													</div>
 												@else 
 													<div class="form-select">
-														<span>Free</span>
+														<span>Gratis</span>
 													</div>
 												@endif
 											</li>
@@ -154,14 +154,14 @@
 											}
 										@endphp
 										@if(session()->has('coupon'))
-											<li class="last" id="order_total_price">You Pay<span>${{number_format($total_amount,2)}}</span></li>
+											<li class="last" id="order_total_price">Pagas<span>${{number_format($total_amount,2)}}</span></li>
 										@else
-											<li class="last" id="order_total_price">You Pay<span>${{number_format($total_amount,2)}}</span></li>
+											<li class="last" id="order_total_price">Pagas<span>${{number_format($total_amount,2)}}</span></li>
 										@endif
 									</ul>
 									<div class="button5">
-										<a href="{{route('checkout')}}" class="btn">Checkout</a>
-										<a href="{{route('product-grids')}}" class="btn">Continue shopping</a>
+										<a href="{{route('checkout')}}" class="btn">Pagar</a>
+										<a href="{{route('product-grids')}}" class="btn">Continuar comprando</a>
 									</div>
 								</div>
 							</div>

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','E-SHOP || HOME PAGE')
+@section('title','E-SHOP || Inicio')
 @section('main-content')
 <!-- Slider Area -->
 <section class="hero-slider">
@@ -13,10 +13,10 @@
                         <div class="row">
                             <div class="col-lg-7 col-12">
                                 <div class="hero-text">
-                                    <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
+                                    <h1><span>Hasta un 50% de descuento en </span>Camisas para caballeros</h1>
                                     <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
                                     <div class="button">
-                                        <a href="#" class="btn">Shop Now!</a>
+                                        <a href="#" class="btn">Comprar ahora!</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 @endif
                                 <div class="content">
                                     <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
+                                        <a href="{{route('product-cat',$cat->slug)}}">Ver ahora</a>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Item</h2>
+                        <h2>Productos en tendencia</h2>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                                 @endphp
                                 @if($categories)
                                 <button class="btn" style="background:black"data-filter="*">
-                                    All Products
+                                    Todos
                                 </button>
                                     @foreach($categories as $key=>$cat)
                                     
@@ -227,7 +227,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Hot Item</h2>
+                    <h2>Artículos demandados</h2>
                 </div>
             </div>
         </div>
@@ -287,7 +287,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="shop-section-title">
-                            <h1>Latest Items</h1>
+                            <h1>Últimos artículos</h1>
                         </div>
                     </div>
                 </div>
@@ -371,7 +371,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>From Our Blog</h2>
+                    <h2>De nuestro blog</h2>
                 </div>
             </div>
         </div>
@@ -406,8 +406,8 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-rocket"></i>
-                    <h4>Free shiping</h4>
-                    <p>Orders over $100</p>
+                    <h4>Envío gratuito</h4>
+                    <p>Para pedidos superiores a $100</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -415,8 +415,8 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-reload"></i>
-                    <h4>Free Return</h4>
-                    <p>Within 30 days returns</p>
+                    <h4>Devolución gratis</h4>
+                    <p>Devolución en 30 días</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -424,8 +424,8 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-lock"></i>
-                    <h4>Sucure Payment</h4>
-                    <p>100% secure payment</p>
+                    <h4>Pago seguro</h4>
+                    <p>Pago 100% seguro</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -433,8 +433,8 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-tag"></i>
-                    <h4>Best Peice</h4>
-                    <p>Guaranteed price</p>
+                    <h4>Mejores precios</h4>
+                    <p>Precios garantizados</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -496,7 +496,7 @@
                                                         @endif
                                                     @endfor
                                                 </div>
-                                                <a href="#"> ({{$rate_count}} customer review)</a>
+                                                <a href="#"> ({{$rate_count}} valoración del cliente)</a>
                                             </div>
                                             <div class="quickview-stock">
                                                 @if($product->stock >0)
@@ -517,7 +517,7 @@
                                             <div class="size">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
+                                                        <h5 class="title">Tamaño</h5>
                                                         <select>
                                                             @php 
                                                             $sizes=explode(',',$product->size);
@@ -531,10 +531,10 @@
                                                     {{-- <div class="col-lg-6 col-12">
                                                         <h5 class="title">Color</h5>
                                                         <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
+                                                            <option selected="selected">Naranja</option>
+                                                            <option>Púrpura</option>
+                                                            <option>Negro</option>
+                                                            <option>Rosado</option>
                                                         </select>
                                                     </div> --}}
                                                 </div>
@@ -561,7 +561,7 @@
                                                 <!--/ End Input Order -->
                                             </div>
                                             <div class="add-to-cart">
-                                                <button type="submit" class="btn">Add to cart</button>
+                                                <button type="submit" class="btn">Agregar al carrito</button>
                                                 <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
                                             </div>
                                         </form>
